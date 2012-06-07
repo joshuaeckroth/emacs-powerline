@@ -15,14 +15,19 @@
 
 (defvar powerline-color1)
 (defvar powerline-color2)
+(defvar powerline-color3)
 
-(setq powerline-color1 "grey22")
-(setq powerline-color2 "grey40")
+(setq powerline-color1 "blue")
+(setq powerline-color2 "red")
+(setq powerline-color3 "gray75")
 
 (set-face-attribute 'mode-line nil
-                    :background "OliveDrab3"
+                    :background "white"
+                    :foreground "orange"
                     :box nil)
 (set-face-attribute 'mode-line-inactive nil
+                    :background "yellow"
+                    :foreground "pink"
                     :box nil)
 
 (scroll-bar-mode -1)
@@ -309,7 +314,7 @@ install the memoized function over the original function."
                                    (if fg
                                        (format "%s" fg)
                                      "white")))))
-        (make-face cface)2
+        (make-face cface)
         (if fg
             (if (eq fg 0)
                 (set-face-attribute cface nil
@@ -320,8 +325,8 @@ install the memoized function over the original function."
                                   :background bg
                                   :box nil))
           (set-face-attribute cface nil
-                            :foreground "white"
-                            :background bg
+                            :foreground bg
+                            :background powerline-color3
                             :box nil))
         cface)
     nil))
